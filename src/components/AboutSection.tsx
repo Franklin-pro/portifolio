@@ -5,17 +5,20 @@ const AboutSection = () => {
         <h2 className="text-3xl lg:text-4xl font-bold mb-4">
           I'm a Software Engineer.|
         </h2>
-        
+
         <p className="text-lg text-muted-foreground mb-8">
-          Currently, I'm a Software Engineer at{' '}
+          Currently, I'm a Software Engineer at{" "}
           <span className="gradient-text font-medium">Qonics Inc</span>
         </p>
-        
+
         <div className="glass-card p-8 max-w-2xl mx-auto">
           <p className="text-foreground/90 leading-relaxed">
-            A self-taught UI/UX designer, functioning in the industry for 3+ years now. 
-            I make meaningful and delightful digital products that create an equilibrium 
-            between user needs and business goals.
+            I'm Franklin Ndanyuzwe, a passionate software developer with
+            expertise in React, Next.js,Vue.js and Flutter. With over a year of
+            experience, I specialize in building full-stack applications,
+            focusing on frontend development,mobile App with Flutter, API
+            integration, and state management using modern frameworks like Pinia
+            and Tailwind CSS.
           </p>
         </div>
       </div>

@@ -1,4 +1,14 @@
-import { GithubIcon, Linkedin, Mail, MapPin, MessageCircle, Phone, PhoneCall, Twitter, Calendar } from 'lucide-react';
+import {
+  GithubIcon,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  PhoneCall,
+  Twitter,
+  Calendar,
+} from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -7,18 +17,26 @@ const ContactSection = () => {
       <div className="absolute top-0 left-0 w-full h-72 bg-gradient-to-b from-primary/5 to-transparent -z-10"></div>
       <div className="absolute -right-32 -top-32 w-64 h-64 rounded-full bg-primary/10 blur-3xl -z-10"></div>
       <div className="absolute -left-32 -bottom-32 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl -z-10"></div>
-      
+
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             Let's <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            I'm currently looking to join a cross-functional team that values improving people's lives 
-            through accessible design. Have a project in mind? Let's make it happen.
+        <div className="flex flex-col md:flex-row md:justify-center gap-4 mb-6">
+            <p className="text-lg bg-blue-500/25 p-2 rounded-lg  max-w-2xl text-start mx-auto pb-2">
+            I am a Web and Mobile Developer based in Kigali, Rwanda. I am
+            dedicated to building beautiful and efficient applications with a
+            focus on clean code and exceptional user experience.
+          </p>
+          <p className="text-lg  bg-blue-500/25 p-2 rounded-lg text-start max-w-2xl mx-auto">
+            I'm currently looking to join a cross-functional team that values
+            improving people's lives through accessible design. Have a project
+            in mind? Let's make it happen.
           </p>
         </div>
-        
+        </div>
+
         <div className="grid md:grid-cols-1 gap-10 items-start">
           {/* Contact Information Card */}
           <div className="glass-card p-8 h-full">
@@ -28,7 +46,7 @@ const ContactSection = () => {
               </div>
               Get in touch
             </h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -36,38 +54,38 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Email</p>
-                  <a 
-                    href="mailto:franklinprogrammer@gmail.com" 
+                  <a
+                    href="mailto:franklinprogrammer@gmail.com"
                     className="font-medium hover:text-primary transition-colors"
                   >
                     franklinprogrammer@gmail.com
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Phone</p>
-                  <a 
-                    href="tel:+250790019543" 
+                  <a
+                    href="tel:+250790019543"
                     className="font-medium hover:text-primary transition-colors"
                   >
                     +250 790 019 543
                   </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-foreground/60 mb-1">Location</p>
-                  <a 
-                    href="https://www.google.com/maps/place/Franklin+developer/@-1.9825347,30.0910301,1129m/data=!3m2!1e3!4b1!4m6!3m5!1s0x19dca72eef097c9b:0x68f8ed50e4465099!8m2!3d-1.9825401!4d30.0936104!16s%2Fg%2F11ltsr__hs!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D" 
+                  <a
+                    href="https://www.google.com/maps/place/Franklin+developer/@-1.9825347,30.0910301,1129m/data=!3m2!1e3!4b1!4m6!3m5!1s0x19dca72eef097c9b:0x68f8ed50e4465099!8m2!3d-1.9825401!4d30.0936104!16s%2Fg%2F11ltsr__hs!5m1!1e1?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-medium hover:text-primary transition-colors"
@@ -76,7 +94,7 @@ const ContactSection = () => {
                   </a>
                 </div>
               </div>
-              
+
               <div className="pt-4">
                 <a
                   href="https://wa.me/250783446449?text=Hi%20Franklin%20Programmer!%20I'm%20interested%20in%20working%20with%20you.%20Could%20you%20please%20provide%20more%20information%20about%20your%20services%20and%20availability?"
@@ -89,12 +107,12 @@ const ContactSection = () => {
                 </a>
               </div>
             </div>
-            
+
             <div className="mt-8 pt-6 border-t border-foreground/10">
               <h4 className="text-lg font-medium mb-4">Follow me</h4>
               <div className="flex gap-4">
-                <a 
-                  href="https://github.com/Franklin-pro" 
+                <a
+                  href="https://github.com/Franklin-pro"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform"
@@ -102,8 +120,8 @@ const ContactSection = () => {
                 >
                   <GithubIcon className="w-5 h-5" />
                 </a>
-                <a 
-                  href="https://www.linkedin.com/in/franklin-ndanyuzwe-00113431a/" 
+                <a
+                  href="https://www.linkedin.com/in/franklin-ndanyuzwe-00113431a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform"
@@ -111,8 +129,8 @@ const ContactSection = () => {
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a 
-                  href="https://x.com/franklinpro21?t=fwSGTCyG_GqylUjbSrFzeg&s=09" 
+                <a
+                  href="https://x.com/franklinpro21?t=fwSGTCyG_GqylUjbSrFzeg&s=09"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:scale-110 transition-transform"
@@ -123,7 +141,7 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
           {/* <div className="glass-card p-8 h-full">
             <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
@@ -198,7 +216,7 @@ const ContactSection = () => {
             </div>
           </div> */}
         </div>
-        
+
         {/* Footer Logo */}
         <div className="text-center mt-16">
           <div className="relative inline-block">
@@ -207,7 +225,9 @@ const ContactSection = () => {
               F
             </div>
           </div>
-          <p className="mt-4 text-foreground/70">Franklin Programmer © {new Date().getFullYear()}</p>
+          <p className="mt-4 text-foreground/70">
+            Franklin Programmer © {new Date().getFullYear()}
+          </p>
         </div>
       </div>
     </section>
