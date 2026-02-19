@@ -1,8 +1,18 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import logo from "../assets/my-logo.png";
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -10,89 +20,108 @@ const Navigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false); // close menu on click (mobile)
+    setIsMobileMenuOpen(false);
   };
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-purple-500/10 backdrop-blur-md shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="text-2xl font-bold gradient-text">Franklin</div>
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "projects", label: "Projects" },
+    { id: "contact", label: "Contact" },
+  ];
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center space-x-8">
-          {["home", "about", "projects"].map((section) => (
+  return (
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/95 backdrop-blur-md shadow-lg py-2" 
+          : "bg-transparent py-4"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo */}
+
+<div
+  onClick={() => scrollToSection("home")}
+  className="flex items-center gap-3 cursor-pointer group"
+>
+
+  
+  <span className="hidden sm:block text-lg font-bold text-foreground tracking-wide">
+    Franklin <span className="text-green-600">Programmer</span>
+  </span>
+</div>
+
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-1">
+          {navItems.map((item) => (
             <button
-              key={section}
-              onClick={() => scrollToSection(section)}
-              className={`text-sm font-medium transition-colors ${
-                activeSection === section
-                  ? "text-primary"
-                  : "text-foreground/80 hover:text-foreground"
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`px-4 py-2 rounded-sm text-sm font-medium transition-all duration-300 relative group ${
+                activeSection === item.id
+                  ? "text-white"
+                  : "text-foreground/70 hover:text-foreground"
               }`}
             >
-              {section === "projects" ? "Lab" : section.charAt(0).toUpperCase() + section.slice(1)}
+              {item.label}
+              <span
+                className={`absolute bottom-0 left-0 right-0 h-0.5 bg-green-600 transition-all duration-300 ${
+                  activeSection === item.id ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                }`}
+              />
             </button>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="hidden lg:block">
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="px-6 py-2 bg-green-600 text-white rounded-sm font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105"
+          >
+            Get In Touch
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-foreground/80 hover:text-foreground"
-          >
-            {isMobileMenuOpen ? (
-              // Close icon
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              // Hamburger icon
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden p-2 hover:bg-foreground/10 rounded-sm transition-colors"
+        >
+          {isMobileMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
+        </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden mt-4 space-y-4 p-4">
-          {["home", "about", "projects"].map((section) => (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-t border-foreground/10 animate-in fade-in slide-in-from-top-2">
+          <div className="max-w-7xl mx-auto px-6 py-4 space-y-2">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`w-full text-left px-4 py-2 rounded-sm transition-all duration-300 ${
+                  activeSection === item.id
+                    ? "bg-green-600 text-white"
+                    : "text-foreground/70 hover:bg-foreground/10"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
             <button
-              key={section}
-              onClick={() => scrollToSection(section)}
-              className={`block w-full text-left text-sm font-medium transition-colors ${
-                activeSection === section
-                  ? "text-primary"
-                  : "text-foreground/80 hover:text-foreground"
-              }`}
+              onClick={() => scrollToSection("contact")}
+              className="w-full mt-4 px-6 py-2 bg-green-600 text-white rounded-sm font-medium"
             >
-              {section === "projects" ? "Lab" : section.charAt(0).toUpperCase() + section.slice(1)}
+              Get In Touch
             </button>
-          ))}
+          </div>
         </div>
       )}
     </nav>
