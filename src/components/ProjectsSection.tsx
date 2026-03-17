@@ -1,9 +1,14 @@
 import { ArrowRight, Github, ExternalLink, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import imbugaImage from '../assets/pharma.png';
 import guraImage from '../assets/e-commerce.png';
 import simpoImage from '../assets/simpo.png';
+import leaziImage from '../assets/Leazi.jpeg';
+import cinemarwa from '../assets/cinemarwa.png';
+import pharmacoreImage from '../assets/pharmacore.png';
 
 const ProjectsSection = () => {
+  const navigate = useNavigate();
   const projects = [
     {
       id: 1,
@@ -11,7 +16,8 @@ const ProjectsSection = () => {
       category: "E-Commerce Platform",
       description: "A fully responsive e-commerce platform specializing in digital products and services. Features seamless shopping experience with integrated payment processing, inventory management, and advanced filtering.",
       image: guraImage,
-      status: "Live",
+      credits:['Single'],
+      status: "fixing bugs",
       tags: ["React", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
       link: "https://gura-online.netlify.app/",
       github: "#",
@@ -22,7 +28,8 @@ const ProjectsSection = () => {
       title: "PHARMACORE ",
       category: "Web Services",
       description: "PHARMACORE is a comprehensive pharmaceutical management system that streamlines inventory control, prescription management, expiring Medications tracking, and expense tracking for healthcare providers.",
-      image: imbugaImage,
+      image: pharmacoreImage,
+      credits:['MUGANZA'],
       status: "pending",
       tags: ["Web Services", "pharmacy management", "inventory control", "expense tracking"],
       link: "https://imbuga-protocol.netlify.app/",
@@ -35,12 +42,40 @@ const ProjectsSection = () => {
       category: "Music Platform",
       description: "A comprehensive music studio and audio services platform for artists and producers. Features audio player with waveform visualization, music promotion, collaboration tools, and e-commerce capabilities.",
       image: simpoImage,
+      credits:['Single'],
       status: "Live",
       tags: ["Music Platform", "Audio", "React", "E-Commerce", "WebAudio"],
       link: "https://simpostudio.netlify.app/",
       github: "#",
       featured: true,
     },
+    {
+      id: 4,
+      title: "Leazi Management system",
+      category: "Leazi web",
+      description: "Leazi transforms the way you manage properties, putting powerful tools and insights at your fingertips..",
+      image: leaziImage,
+      credit:['Qonics-Inc'],
+      status: "live",
+      tags: ["Music Platform", "Audio", "React", "E-Commerce", "WebAudio"],
+      link: "https://leazi.io/",
+      github: "#",
+      featured: true,
+    },
+    {
+      id: 5,
+      title: "CINEMA-RW",
+      category: "Movie Platform",
+      description: "A comprehensive movie platform for watching and Earning money through movie subscriptions and purchases.",
+      image: cinemarwa,
+      credits:['Single'],
+      status: "Live",
+      tags: ["Movie Platform", "React", "Movie Management"],
+      link: "https://cinema.rw/",
+      github: "https://github.com/Franklin-pro/Cinemarwa-FN",
+      featured: true,
+    },
+
   ];
 
   return (
@@ -109,17 +144,17 @@ const ProjectsSection = () => {
                     {/* CTA Buttons */}
                     <div className="flex flex-wrap gap-4 pt-6">
                       <button
-                      disabled={project.status === "pending"}
+                      disabled={project.status === "pending" || project.status === "fixing bugs"}
                       onClick={() => window.open(project.link, "_blank")}
                         
-                        className={`${project.status === "pending" ? "opacity-50 cursor-not-allowed" : "inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-sm font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 group/btn"}`}
+                        className={`${project.status === "pending" || project.status === "fixing bugs" ? "opacity-50 cursor-not-allowed" : "inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-sm font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 group/btn"}`}
                       >
                         <span>Visit Project</span>
                         <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                       </button>
                       <a
                         href={project.github}
-                        className={`${project.status === "pending" ? "opacity-50 cursor-not-allowed" : "inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground/20 text-foreground rounded-sm font-semibold hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105 group/btn"}`}
+                        className={`${project.status === "pending" || project.status === "fixing bugs" ? "opacity-50 cursor-not-allowed" : "inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground/20 text-foreground rounded-sm font-semibold hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105 group/btn"}`}
                       >
                         <span>View Code</span>
                         <Github className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -156,7 +191,10 @@ const ProjectsSection = () => {
 
         {/* View More Projects CTA */}
         <div className="mt-16 text-center">
-          <button className="inline-flex items-center gap-2 px-8 py-4 bg-foreground/10 border border-foreground/20 text-foreground rounded-sm font-semibold hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105 group">
+          <button 
+            onClick={() => navigate('/projects')}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-foreground/10 border border-foreground/20 text-foreground rounded-sm font-semibold hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300 transform hover:scale-105 group"
+          >
             <span>View All Projects</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
