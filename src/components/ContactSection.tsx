@@ -111,18 +111,6 @@ const ContactSection = () => {
       `}</style>
 
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
-
-        {/* ── Toggle ── */}
-        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 32 }}>
-          <button
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 99, border: '1px solid ' + t.toggleBorder, backgroundColor: t.toggleBg, color: t.toggleText, fontSize: 12, fontWeight: 600, letterSpacing: '0.03em', cursor: 'pointer', transition: 'all 0.2s ease', fontFamily: "'Montserrat', sans-serif" }}
-          >
-            {isDark ? <SunIcon /> : <MoonIcon />}
-            {isDark ? 'Light mode' : 'Dark mode'}
-          </button>
-        </div>
-
         {/* ── Header ── */}
         <div style={{ marginBottom: 56, textAlign: 'center' }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: t.accent, marginBottom: 14 }}>
