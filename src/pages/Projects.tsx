@@ -70,7 +70,7 @@ const Projects = () => {
       description: "A comprehensive movie platform for watching and Earning money through movie subscriptions and purchases.",
       image: cinemarwa,
       credits: ['Single'],
-      status: "Live",
+      status: "pending",
       tags: ["Movie Platform", "React", "Movie Management"],
       link: "https://cinema.rw/",
       github: "https://github.com/Franklin-pro/Cinemarwa-FN",
