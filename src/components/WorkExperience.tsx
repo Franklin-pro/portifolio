@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Calendar, Award, Briefcase, ArrowRight, Code, Layers } from 'lucide-react';
+import GitHubContributions from './contributions';
 
 type ThemeType = 'dark' | 'light';
 
@@ -192,6 +193,8 @@ const WorkExperience = () => {
             </div>
           </div>
         </div>
+
+        <GitHubContributions  />
 
       </div>
     </section>
