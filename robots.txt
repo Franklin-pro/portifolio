@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://franklindevloper.netlify.app/sitemap.xml

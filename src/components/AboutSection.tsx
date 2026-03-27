@@ -117,12 +117,13 @@ const AboutSection = () => {
 
         {/* Header */}
         <div style={{ marginBottom: 64 }}>
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: t.accent, marginBottom: 14 }}>Introduction</p>
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: t.accent, marginBottom: 14 }}>Web Developer in Rwanda</p>
           <h2 style={{ fontSize: 'clamp(34px,5vw,54px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.02em', color: t.title, transition: 'color 0.3s ease' }}>
             About <span style={{ color: t.accent }}>Me</span>
+            
           </h2>
           <div style={{ width: 40, height: 3, backgroundColor: t.accent, borderRadius: 2, margin: '18px 0' }} />
-          <p style={{ fontSize: 15, lineHeight: 1.7, color: t.body, maxWidth: 460, fontWeight: 400 }}>A passionate software engineer dedicated to creating innovative digital solutions.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.7, color: t.body, maxWidth: 460, fontWeight: 400 }}>I am a web developer based in Rwanda specializing in React, Node.js, and modern web applications.</p>
         </div>
 
         {/* Bio + Stats */}
