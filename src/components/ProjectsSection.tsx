@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import guraImage from '../assets/e-commerce.png';
+import guraImage from '../assets/cars.png';
 import simpoImage from '../assets/simpo.png';
 import leaziImage from '../assets/Leazi.jpeg';
 import cinemarwa from '../assets/cinemarwa.png';
 import pharmacoreImage from '../assets/pharmacore.png';
 
-type StatusType = 'live' | 'pending' | 'fixing bugs';
+type StatusType = 'live' | 'pending' | 'fixing bugs' | 'in_progress';
 type ThemeType  = 'dark' | 'light';
 
 interface Project {
@@ -71,7 +71,8 @@ const MoonIcon = () => (
 const statusMap: Record<StatusType, { color: string; label: string }> = {
   'live':        { color: '#22c55e', label: 'Live' },
   'pending':     { color: '#f59e0b', label: 'Pending' },
-  'fixing bugs': { color: '#f97316', label: 'In Progress' },
+  'fixing bugs': { color: '#f97316', label: 'Fixing Bugs' },
+  'in_progress': { color: '#f97316', label: 'In Progress' },
 };
 
 // ── Theme tokens — green-500 (#22c55e) as primary ──
@@ -131,24 +132,24 @@ const tokens = {
 // ── Projects ──────────────────────────────────────
 const projects: Project[] = [
   {
-    id: 1, title: 'Gura Online', category: 'E-Commerce',
+    id: 1, title: 'F-Motors', category: 'E-Commerce',
     catBgDark: GD+'0.15)', catTextDark: '#4ade80',
     catBgLight: '#dcfce7',  catTextLight: '#166534',
     accentBg: '#15803d', accentHover: '#166534',
-    description: 'A fully responsive e-commerce platform for digital products and services. Features seamless shopping, integrated payment processing, inventory management, and advanced filtering.',
-    image: guraImage, status: 'fixing bugs',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+    description: 'At F-Motors, we focus on trust, transparency, and convenience. Every listing is structured to provide accurate information, high-quality images, and clear pricing, helping users make confident decisions.',
+    image: guraImage, status: 'pending',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'POSTGRESQL'],
     link: 'https://gura-online.netlify.app/', github: '#', num: '01',
   },
   {
-    id: 2, title: 'PHARMACORE', category: 'Web Services',
+    id: 2, title: 'PHARMALINKR', category: 'Web Services',
     catBgDark: 'rgba(20,184,166,0.15)', catTextDark: '#2dd4bf',
     catBgLight: '#ccfbf1',              catTextLight: '#115e59',
     accentBg: '#0f766e', accentHover: '#115e59',
     description: 'A comprehensive pharmaceutical management system that streamlines inventory control, prescription management, expiring medication tracking, and expense management for healthcare providers.',
-    image: pharmacoreImage, status: 'pending',
+    image: pharmacoreImage, status: 'live',
     tags: ['Web Services', 'Pharmacy Mgmt', 'Inventory', 'Healthcare'],
-    link: 'https://imbuga-protocol.netlify.app/', github: '#', num: '02',
+    link: 'https://www.pharmalinkr.com', github: '#', num: '02',
   },
   {
     id: 3, title: 'SimpoPlanet', category: 'Music Platform',
@@ -176,7 +177,7 @@ const projects: Project[] = [
     catBgLight: '#fee2e2',             catTextLight: '#7f1d1d',
     accentBg: '#b91c1c', accentHover: '#991b1b',
     description: "A comprehensive movie platform for watching and earning through subscriptions and purchases. Rwanda's go-to destination for local and international cinema content.",
-    image: cinemarwa, status: 'pending',
+    image: cinemarwa, status: 'in_progress',
     tags: ['React', 'Movie Mgmt', 'Subscriptions'],
     link: 'https://cinema.rw/', github: 'https://github.com/Franklin-pro/Cinemarwa-FN', num: '05',
   },
@@ -225,7 +226,7 @@ const ProjectsSection = () => {
         {/* Cards */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {projects.map((project, index) => {
-            const isDisabled = project.status === 'pending' || project.status === 'fixing bugs';
+            const isDisabled = project.status === 'pending' || project.status === 'fixing bugs' || project.status === 'in_progress';
             const st   = statusMap[project.status];
             const isRev = index % 2 === 1;
             const isHov = hoveredCard === index;
