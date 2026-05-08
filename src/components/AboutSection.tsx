@@ -27,83 +27,83 @@ const MoonIcon = () => (
 );
 
 // green-500 = #22c55e  |  green-600 = #16a34a
-const G  = '#22c55e';
+const G = '#22c55e';
 const GH = '#16a34a';
 const GD = 'rgba(34,197,94,';
 
 const tokens = {
   dark: {
-    bg:           '#09090b',
-    surface:      '#111113',
-    surfaceHov:   '#141417',
-    border:       'rgba(255,255,255,0.07)',
-    borderHov:    GD + '0.4)',
-    title:        '#f4f4f5',
-    body:         '#a1a1aa',
-    muted:        '#52525b',
-    accent:       G,
-    accentDim:    GD + '0.1)',
-    statBg:       '#18181b',
-    statBorder:   'rgba(255,255,255,0.07)',
-    statNum:      '#4ade80',
-    tagBg:        GD + '0.1)',
-    tagText:      '#4ade80',
-    tagBorder:    GD + '0.2)',
-    avatarBg:     GD + '0.12)',
+    bg: '#09090b',
+    surface: '#111113',
+    surfaceHov: '#141417',
+    border: 'rgba(255,255,255,0.07)',
+    borderHov: GD + '0.4)',
+    title: '#f4f4f5',
+    body: '#a1a1aa',
+    muted: '#52525b',
+    accent: G,
+    accentDim: GD + '0.1)',
+    statBg: '#18181b',
+    statBorder: 'rgba(255,255,255,0.07)',
+    statNum: '#4ade80',
+    tagBg: GD + '0.1)',
+    tagText: '#4ade80',
+    tagBorder: GD + '0.2)',
+    avatarBg: GD + '0.12)',
     avatarBorder: GD + '0.25)',
-    avatarText:   '#4ade80',
-    cardShadow:   '0 8px 40px rgba(0,0,0,0.6)',
-    toggleBg:     '#1c1c1f',
+    avatarText: '#4ade80',
+    cardShadow: '0 8px 40px rgba(0,0,0,0.6)',
+    toggleBg: '#1c1c1f',
     toggleBorder: 'rgba(255,255,255,0.08)',
-    toggleText:   '#a1a1aa',
+    toggleText: '#a1a1aa',
   },
   light: {
-    bg:           '#f9fafb',
-    surface:      '#ffffff',
-    surfaceHov:   '#f0fdf4',
-    border:       'rgba(0,0,0,0.08)',
-    borderHov:    GD + '0.4)',
-    title:        '#111827',
-    body:         '#6b7280',
-    muted:        '#9ca3af',
-    accent:       GH,
-    accentDim:    GD + '0.08)',
-    statBg:       '#f0fdf4',
-    statBorder:   GD + '0.15)',
-    statNum:      GH,
-    tagBg:        GD + '0.08)',
-    tagText:      '#15803d',
-    tagBorder:    GD + '0.18)',
-    avatarBg:     '#dcfce7',
+    bg: '#f9fafb',
+    surface: '#ffffff',
+    surfaceHov: '#f0fdf4',
+    border: 'rgba(0,0,0,0.08)',
+    borderHov: GD + '0.4)',
+    title: '#111827',
+    body: '#6b7280',
+    muted: '#9ca3af',
+    accent: GH,
+    accentDim: GD + '0.08)',
+    statBg: '#f0fdf4',
+    statBorder: GD + '0.15)',
+    statNum: GH,
+    tagBg: GD + '0.08)',
+    tagText: '#15803d',
+    tagBorder: GD + '0.18)',
+    avatarBg: '#dcfce7',
     avatarBorder: GD + '0.3)',
-    avatarText:   '#15803d',
-    cardShadow:   '0 8px 40px rgba(0,0,0,0.08)',
-    toggleBg:     '#f3f4f6',
+    avatarText: '#15803d',
+    cardShadow: '0 8px 40px rgba(0,0,0,0.08)',
+    toggleBg: '#f3f4f6',
     toggleBorder: 'rgba(0,0,0,0.1)',
-    toggleText:   '#374151',
+    toggleText: '#374151',
   },
 };
 
 const stats = [
   { number: '50+', label: 'Projects' },
-  { number: '30+', label: 'Clients' },
-  { number: '1+',  label: 'Years Exp.' },
+  { number: '5+', label: 'Clients' },
+  { number: '2+', label: 'Years Exp.' },
 ];
 
 const skills: Skill[] = [
-  { icon: Code,       title: 'Frontend Development', description: 'React, Next.js, Vue.js with modern state management and UI frameworks',       accentDark: G,        accentLight: GH },
-  { icon: Smartphone, title: 'Mobile Development',   description: 'Flutter for cross-platform mobile applications with native performance',       accentDark: '#60a5fa', accentLight: '#2563eb' },
-  { icon: Database,   title: 'Backend & APIs',        description: 'RESTful APIs, database design, and server-side logic with Node.js',            accentDark: '#f472b6', accentLight: '#db2777' },
-  { icon: Palette,    title: 'UI/UX Design',          description: 'Beautiful, responsive interfaces using Tailwind CSS and design principles',     accentDark: '#fb923c', accentLight: '#ea580c' },
-  { icon: Zap,        title: 'Performance',           description: 'Optimized applications with focus on speed and user experience',               accentDark: '#facc15', accentLight: '#ca8a04' },
-  { icon: Lightbulb,  title: 'Problem Solving',       description: 'Creative solutions to complex technical challenges',                           accentDark: '#a78bfa', accentLight: '#7c3aed' },
+  { icon: Code, title: 'Frontend Development', description: 'React, Next.js, Vue.js with modern state management and UI frameworks', accentDark: G, accentLight: GH },
+  { icon: Smartphone, title: 'Mobile Development', description: 'Flutter for cross-platform mobile applications with native performance', accentDark: '#60a5fa', accentLight: '#2563eb' },
+  { icon: Database, title: 'Backend & APIs', description: 'RESTful APIs, database design, and server-side logic with Node.js', accentDark: '#f472b6', accentLight: '#db2777' },
+  { icon: Palette, title: 'UI/UX Design', description: 'Beautiful, responsive interfaces using Tailwind CSS and design principles', accentDark: '#fb923c', accentLight: '#ea580c' },
+  { icon: Zap, title: 'Performance', description: 'Optimized applications with focus on speed and user experience', accentDark: '#facc15', accentLight: '#ca8a04' },
+  { icon: Lightbulb, title: 'Problem Solving', description: 'Creative solutions to complex technical challenges', accentDark: '#a78bfa', accentLight: '#7c3aed' },
 ];
 
 const AboutSection = () => {
-  const [theme, setTheme]       = useState<ThemeType>('dark');
+  const [theme, setTheme] = useState<ThemeType>('dark');
   const [hovSkill, setHovSkill] = useState<number | null>(null);
-  const [hovStat, setHovStat]   = useState<number | null>(null);
-  const t      = tokens[theme];
+  const [hovStat, setHovStat] = useState<number | null>(null);
+  const t = tokens[theme];
   const isDark = theme === 'dark';
 
   return (
@@ -120,7 +120,7 @@ const AboutSection = () => {
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: t.accent, marginBottom: 14 }}>Web Developer in Rwanda</p>
           <h2 style={{ fontSize: 'clamp(34px,5vw,54px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.02em', color: t.title, transition: 'color 0.3s ease' }}>
             About <span style={{ color: t.accent }}>Me</span>
-            
+
           </h2>
           <div style={{ width: 40, height: 3, backgroundColor: t.accent, borderRadius: 2, margin: '18px 0' }} />
           <p style={{ fontSize: 15, lineHeight: 1.7, color: t.body, maxWidth: 460, fontWeight: 400 }}>I am a web developer based in Rwanda specializing in React, Node.js, and modern web applications.</p>
@@ -190,7 +190,7 @@ const AboutSection = () => {
           <div className="ab-3col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }}>
             {skills.map((skill, i) => {
               const accent = isDark ? skill.accentDark : skill.accentLight;
-              const isH    = hovSkill === i;
+              const isH = hovSkill === i;
               return (
                 <div key={skill.title} onMouseEnter={() => setHovSkill(i)} onMouseLeave={() => setHovSkill(null)}
                   style={{ padding: '22px 20px', backgroundColor: isH ? t.surfaceHov : t.surface, border: '1px solid ' + (isH ? accent + '55' : t.border), borderRadius: 14, cursor: 'default', transition: 'all 0.25s ease', transform: isH ? 'translateY(-3px)' : 'translateY(0)', boxShadow: isH ? t.cardShadow : 'none' }}>
