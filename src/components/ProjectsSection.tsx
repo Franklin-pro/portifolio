@@ -159,7 +159,7 @@ const projects: Project[] = [
     catBgLight: '#ccfbf1',              catTextLight: '#115e59',
     accentBg: '#0f766e', accentHover: '#115e59',
     description: 'A comprehensive pharmaceutical management system that streamlines inventory control, prescription management, expiring medication tracking, and expense management for healthcare providers.',
-    image: pharmacoreappImage, status: 'live',
+    image: pharmacoreappImage, status: 'in_progress',
     tags: ['App Services', 'Pharmacy Mgmt', 'Inventory', 'Healthcare'],
     link: 'https://www.pharmalinkr.com', github: '#', num: '02',
   },
