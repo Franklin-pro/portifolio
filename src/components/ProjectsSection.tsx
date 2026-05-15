@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import guraImage from '../assets/cars.png';
 import simpoImage from '../assets/simpo.png';
 import leaziImage from '../assets/Leazi.jpeg';
+import leaziappImage from '../assets/leaziapp.png';
 import cinemarwa from '../assets/cinemarwa.png';
-import pharmacoreImage from '../assets/pharmacore.png';
+import pharmacoreImage from '../assets/websitepharma.png';
+import pharmacoreappImage from '../assets/pharmalinkrapp.png'
 
 type StatusType = 'live' | 'pending' | 'fixing bugs' | 'in_progress';
 type ThemeType  = 'dark' | 'light';
@@ -142,13 +144,23 @@ const projects: Project[] = [
     link: 'https://gura-online.netlify.app/', github: '#', num: '01',
   },
   {
-    id: 2, title: 'PHARMALINKR', category: 'Web Services',
+    id: 2, title: 'PHARMALINKR WEB', category: 'Web Services',
     catBgDark: 'rgba(20,184,166,0.15)', catTextDark: '#2dd4bf',
     catBgLight: '#ccfbf1',              catTextLight: '#115e59',
     accentBg: '#0f766e', accentHover: '#115e59',
     description: 'A comprehensive pharmaceutical management system that streamlines inventory control, prescription management, expiring medication tracking, and expense management for healthcare providers.',
     image: pharmacoreImage, status: 'live',
     tags: ['Web Services', 'Pharmacy Mgmt', 'Inventory', 'Healthcare'],
+    link: 'https://www.pharmalinkr.com', github: '#', num: '02',
+  },
+    {
+    id: 2, title: 'PHARMALINKR APP', category: 'App Services',
+    catBgDark: 'rgba(20,184,166,0.15)', catTextDark: '#2dd4bf',
+    catBgLight: '#ccfbf1',              catTextLight: '#115e59',
+    accentBg: '#0f766e', accentHover: '#115e59',
+    description: 'A comprehensive pharmaceutical management system that streamlines inventory control, prescription management, expiring medication tracking, and expense management for healthcare providers.',
+    image: pharmacoreappImage, status: 'live',
+    tags: ['App Services', 'Pharmacy Mgmt', 'Inventory', 'Healthcare'],
     link: 'https://www.pharmalinkr.com', github: '#', num: '02',
   },
   {
@@ -162,7 +174,7 @@ const projects: Project[] = [
     link: 'https://simpostudio.netlify.app/', github: '#', num: '03',
   },
   {
-    id: 4, title: 'Leazi Management', category: 'Property Tech',
+    id: 4, title: 'Leazi Web', category: 'Property Tech',
     catBgDark: 'rgba(251,191,36,0.15)', catTextDark: '#fbbf24',
     catBgLight: '#fef3c7',              catTextLight: '#78350f',
     accentBg: '#b45309', accentHover: '#92400e',
@@ -170,6 +182,16 @@ const projects: Project[] = [
     image: leaziImage, status: 'live',
     tags: ['React', 'PropTech', 'Dashboard'],
     link: 'https://leazi.io/', github: '#', num: '04',
+  },
+  {
+    id: 4, title: 'Leazi App', category: 'Property Tech',
+    catBgDark: 'rgba(251,191,36,0.15)', catTextDark: '#fbbf24',
+    catBgLight: '#fef3c7',              catTextLight: '#78350f',
+    accentBg: '#b45309', accentHover: '#92400e',
+    description: 'Leazi transforms how you manage properties, putting powerful tools and insights at your fingertips. Built with Qonics Inc to streamline property operations at scale.',
+    image: leaziappImage, status: 'live',
+    tags: ['React', 'PropTech', 'Dashboard'],
+    link: 'https://play.google.com/store/apps/details?id=com.qonics.leazi&pli=1', github: '#', num: '04',
   },
   {
     id: 5, title: 'CINEMA-RW', category: 'Movie Platform',
